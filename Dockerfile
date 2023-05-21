@@ -16,4 +16,4 @@ RUN yarn install
 # expose port 3000
 EXPOSE 3000
 # khi container được khởi chạy, sẽ chạy lệnh npm start trong thư mục client
-CMD [""yarn ", "start"]
+CMD ["yarn ", "start"]

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phonestorebe
+  template:
+    metadata:
+      labels:
+        app: phonestorebe
+    spec:
+      containers:
+        - name: phonestorebe-container
+          image: your-dockerhub-username/your-image-name:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_HOST
+              value: 127.0.0.1
+            - name: DATABASE_USER
+              value: root
+            - name: DATABASE_PASSWORD
+              value: dong2605
+            - name: DATABASE_PORT
+              value: "3306"
+            - name: DATABASE_NAME
+              value: phone
